@@ -93,7 +93,7 @@ jobs:
       run: |
           rasa --version
           rasa test nlu -f 3 --cross-validation --config config_nlu_testing.yml
-          python .github/workflows/format_results.py
+          
     - name: post cross-val results to PR
       if: steps.cvnlu.outcome == 'success'
       uses: amn41/comment-on-pr@comment-file-contents
