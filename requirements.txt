@@ -1,3 +1,4 @@
 rasa==2.4.0
 rasa-sdk==2.4.0
 python-engineio==4.1.0
+pytablewriter
