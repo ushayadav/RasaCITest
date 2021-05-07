@@ -90,7 +90,6 @@ jobs:
           rasa --version
     - name: Cross-validate NLU model
       id: cvnlu
-      if: contains( github.event.pull_request.labels.*.name, 'nlu_testing_required' ) 
       run: |
           rasa --version
           rasa test nlu -f 3 --cross-validation --config config_nlu_testing.yml
@@ -106,7 +105,6 @@ jobs:
         rasa --version
         rasa train
     - name: Test End 2 End Stories
-      if:  ${{ needs.check_changed_files.outputs.core == 'true' }}
       run: |
         rasa --version
         rasa test core --stories tests/test_conversations.yml --fail-on-prediction-errors
