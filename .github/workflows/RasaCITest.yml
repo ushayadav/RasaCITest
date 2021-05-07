@@ -29,7 +29,7 @@ jobs:
       id: changed-files
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        filters: .github/change_filters.yml
+        filters: .github/filters.yml
         base: ${{ github.ref }}
   lint-testing:
     name: Code Formatting Tests
